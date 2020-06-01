@@ -1,0 +1,27 @@
+﻿@model MvcMovie.Models.Doctors
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Dodaj lekarza do bazy danych</h1>
+<form method="post" action="/doctors/AddDoctor">
+    <div class="row">
+        <div class="input-field col s6">
+            <label>Imię</label>
+            @Html.EditorFor(d=>d.FirstName)
+            <span>@Html.ValidationMessageFor(d=>d.FirstName)</span>
+        </div>
+        <div class="input-field col s6">
+            <label>Nazwisko</label>
+            @Html.EditorFor(d => d.LastName)
+            <span>@Html.ValidationMessageFor(d => d.LastName)</span>
+        </div>
+        <div class="input-field col s6">
+            <label>Email</label>
+            @Html.EditorFor(d => d.Email)
+            <span>@Html.ValidationMessageFor(d => d.Email)</span>
+        </div>
+    </div>
+    <input type="submit" value="Wyślij" class="btn" />
+</form>
+
